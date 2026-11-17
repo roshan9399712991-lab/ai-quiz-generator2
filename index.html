@@ -2,242 +2,1099 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to my professional website.">
-    <title>My Website | Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sandipani School Chhatwai - Student Learning Portal, Study Material, Online Quiz, Homework and AI Learning.">
+<title>Sandipani School | Student Portal</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
+:root {
+    --primary: #155eef;
+    --dark: #102a56;
+    --light: #eff6ff;
+    --text: #253858;
+    --muted: #64748b;
+    --white: #ffffff;
+    --border: #e2e8f0;
+}
 
-        body {
-            background: #f8fafc;
-            color: #1e293b;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-        /* Navbar */
-        header {
-            background: #0f172a;
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f7faff;
+    color: var(--text);
+}
 
-        .logo {
-            color: white;
-            font-size: 25px;
-            font-weight: bold;
-        }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 15px;
-        }
+button, input, textarea, select {
+    font: inherit;
+}
 
-        nav a:hover {
-            color: #38bdf8;
-        }
+button {
+    cursor: pointer;
+    border: none;
+}
 
-        /* Hero Section */
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #0f172a, #1e40af);
-            color: white;
-        }
+.topbar {
+    background: var(--dark);
+    color: white;
+    padding: 9px 6%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+}
 
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
+header {
+    background: white;
+    padding: 15px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 15px #102a5610;
+}
 
-        .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            line-height: 1.7;
-        }
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 13px 28px;
-            background: #38bdf8;
-            color: #0f172a;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: bold;
-        }
+.logo-icon {
+    background: var(--primary);
+    color: white;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+}
 
-        .btn:hover {
-            background: white;
-        }
+.logo h2 {
+    font-size: 19px;
+    color: var(--dark);
+}
 
-        /* About Section */
-        section {
-            padding: 70px 8%;
-            text-align: center;
-        }
+.logo small {
+    color: var(--muted);
+    font-size: 11px;
+}
 
-        section h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-        }
+nav {
+    display: flex;
+    gap: 19px;
+    align-items: center;
+    flex-wrap: wrap;
+}
 
-        .about p {
-            max-width: 700px;
-            margin: auto;
-            line-height: 1.8;
-            color: #64748b;
-        }
+nav a {
+    font-size: 13px;
+    font-weight: 600;
+}
 
-        /* Services */
-        .services-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-            margin-top: 35px;
-        }
+nav a:hover {
+    color: var(--primary);
+}
 
-        .service-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-        }
+.menu-btn {
+    display: none;
+    background: var(--primary);
+    color: white;
+    padding: 9px 13px;
+    border-radius: 7px;
+}
 
-        .service-card h3 {
-            margin-bottom: 12px;
-            color: #2563eb;
-        }
+.hero {
+    background: linear-gradient(120deg, #102a56, #155eef);
+    padding: 85px 7%;
+    color: white;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    align-items: center;
+    gap: 40px;
+}
 
-        .service-card p {
-            color: #64748b;
-            line-height: 1.6;
-        }
+.hero-label {
+    background: #ffffff20;
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-size: 12px;
+    margin-bottom: 22px;
+}
 
-        /* Contact */
-        .contact {
-            background: #e2e8f0;
-        }
+.hero h1 {
+    font-size: clamp(32px, 5vw, 54px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
 
-        .contact p {
-            margin: 12px 0;
-        }
+.hero h1 span {
+    color: #93c5fd;
+}
 
-        /* Footer */
-        footer {
-            background: #0f172a;
-            color: white;
-            text-align: center;
-            padding: 22px;
-        }
+.hero p {
+    color: #dbeafe;
+    line-height: 1.8;
+    margin-bottom: 27px;
+}
 
-        /* Responsive */
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                gap: 18px;
-            }
+.btn {
+    display: inline-block;
+    background: white;
+    color: var(--primary);
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+    margin: 4px;
+}
 
-            nav a {
-                margin: 0 7px;
-                font-size: 13px;
-            }
+.btn-outline {
+    background: transparent;
+    color: white;
+    border: 1px solid #ffffff80;
+}
 
-            .hero h1 {
-                font-size: 34px;
-            }
+.hero-card {
+    background: white;
+    color: var(--dark);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 15px 40px #0002;
+}
 
-            .hero p {
-                font-size: 16px;
-            }
-        }
-    </style>
+.hero-card .avatar {
+    background: #dbeafe;
+    color: var(--primary);
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 29px;
+    margin-bottom: 17px;
+}
+
+.hero-card h3 {
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+.hero-card p {
+    color: var(--muted);
+    margin: 5px 0;
+}
+
+.section {
+    padding: 70px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    color: var(--dark);
+    font-size: 31px;
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 24px;
+    border-radius: 13px;
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px #102a5610;
+}
+
+.card-icon {
+    width: 49px;
+    height: 49px;
+    background: var(--light);
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    margin-bottom: 17px;
+}
+
+.card h3 {
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.link-btn {
+    background: none;
+    color: var(--primary);
+    font-weight: 700;
+    padding: 0;
+}
+
+/* Dashboard */
+
+.dashboard {
+    background: #edf4ff;
+}
+
+.welcome {
+    background: linear-gradient(120deg, #155eef, #3b82f6);
+    color: white;
+    padding: 28px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.welcome p {
+    margin-top: 9px;
+    color: #e0ecff;
+}
+
+.stat {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.stat h2 {
+    color: var(--primary);
+    font-size: 30px;
+}
+
+.stat p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* Study material */
+
+.resource {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    margin-bottom: 12px;
+    background: white;
+}
+
+.resource h4 {
+    color: var(--dark);
+}
+
+.resource small {
+    color: var(--muted);
+}
+
+.download {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* Notices */
+
+.notice {
+    border-left: 4px solid var(--primary);
+    background: white;
+    padding: 18px;
+    border-radius: 8px;
+    margin-bottom: 13px;
+}
+
+.notice small {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.notice h3 {
+    margin: 7px 0;
+}
+
+/* Quiz */
+
+.quiz-box {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+}
+
+.quiz-option {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 13px;
+    margin-top: 11px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: white;
+}
+
+.quiz-option:hover {
+    border-color: var(--primary);
+    background: var(--light);
+}
+
+.quiz-option:disabled {
+    cursor: default;
+    opacity: .85;
+}
+
+.quiz-option.correct {
+    background: #dcfce7;
+    border-color: #16a34a;
+}
+
+.quiz-option.wrong {
+    background: #fee2e2;
+    border-color: #dc2626;
+}
+
+.primary-btn {
+    background: var(--primary);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-top: 17px;
+    font-weight: bold;
+}
+
+#quizFeedback {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* Homework */
+
+.homework-form {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+}
+
+.form-group {
+    margin-bottom: 17px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+}
+
+/* Gallery */
+
+.gallery-item {
+    height: 180px;
+    background: linear-gradient(135deg, #dbeafe, #93c5fd);
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 48px;
+}
+
+.gallery-card p {
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+/* Principal */
+
+.principal {
+    background: #edf4ff;
+}
+
+.principal-box {
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+}
+
+.principal-avatar {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    background: var(--light);
+    display: grid;
+    place-items: center;
+    font-size: 40px;
+    margin: 0 auto 18px;
+}
+
+.principal-box p {
+    color: var(--muted);
+    margin: 10px 0;
+    line-height: 1.7;
+}
+
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 35px 7%;
+    text-align: center;
+}
+
+footer p {
+    color: #cbd5e1;
+    font-size: 13px;
+    margin-top: 9px;
+}
+
+footer a {
+    color: #93c5fd;
+}
+
+@media(max-width: 850px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 500px) {
+    .topbar {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .section {
+        padding: 50px 5%;
+    }
+
+    .resource {
+        align-items: flex-start;
+    }
+
+    .hero {
+        padding: 60px 6%;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <header>
-        <div class="logo">MyWebsite</div>
+<div class="topbar">
+    <span>🎓 Sandipani School, Chhatwai</span>
+    <span>📚 Learning Today, Leading Tomorrow</span>
+</div>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
-    <!-- Hero -->
-    <div class="hero" id="home">
+<header>
+    <div class="logo">
+        <div class="logo-icon">🎓</div>
         <div>
-            <h1>Welcome to My Website</h1>
-            <p>
-                Build your future with technology and innovation.
-                Explore our services and discover new opportunities.
-            </p>
-            <a href="#about" class="btn">Explore More</a>
+            <h2>Sandipani School</h2>
+            <small>Chhatwai, Shahdol, Madhya Pradesh</small>
         </div>
     </div>
 
-    <!-- About -->
-    <section class="about" id="about">
-        <h2>About Us</h2>
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+
+    <nav id="navigation">
+        <a href="#home">Home</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#study">Study Material</a>
+        <a href="#quiz">Online Quiz</a>
+        <a href="#notices">Notices</a>
+        <a href="#homework">Homework</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+    <div>
+        <span class="hero-label">WELCOME TO OUR SCHOOL PORTAL</span>
+
+        <h1>Learn, Explore & <span>Achieve More!</span></h1>
+
         <p>
-            We are passionate about technology, creativity and innovation.
-            Our goal is to provide modern solutions and help people
-            achieve their goals.
+            Welcome to Sandipani School Chhatwai's student learning portal.
+            Access study materials, practice quizzes, explore AI and
+            improve your knowledge every day.
         </p>
-    </section>
 
-    <!-- Services -->
-    <section id="services">
-        <h2>Our Services</h2>
+        <a href="#study" class="btn">Explore Learning</a>
+        <a href="#dashboard" class="btn btn-outline">Student Dashboard</a>
+    </div>
 
-        <div class="services-container">
+    <div class="hero-card">
+        <div class="avatar">👨‍🎓</div>
+        <h3>Welcome, Roshan!</h3>
+        <p>Student Name: Roshan</p>
+        <p>Class: 7th</p>
+        <p>School: Sandipani School</p>
+        <p>Location: Chhatwai, Shahdol</p>
+        <br>
+        <a href="#dashboard" class="link-btn">View Student Dashboard →</a>
+    </div>
+</section>
 
-            <div class="service-card">
-                <h3>Web Development</h3>
-                <p>Modern and responsive websites using the latest technologies.</p>
-            </div>
+<!-- DASHBOARD -->
 
-            <div class="service-card">
-                <h3>Python Development</h3>
-                <p>Powerful applications and automation solutions using Python.</p>
-            </div>
+<section class="section dashboard" id="dashboard">
+    <div class="welcome">
+        <h2>Hello, Roshan! 👋</h2>
+        <p>Welcome to your student dashboard. Keep learning and growing!</p>
+    </div>
 
-            <div class="service-card">
-                <h3>AI & Machine Learning</h3>
-                <p>Intelligent solutions powered by Artificial Intelligence.</p>
-            </div>
-
+    <div class="grid">
+        <div class="stat">
+            <h2>7th</h2>
+            <p>Your Current Class</p>
         </div>
-    </section>
 
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: example@gmail.com</p>
-        <p>Phone: +91 9876543210</p>
-        <a href="mailto:example@gmail.com" class="btn">Send Email</a>
-    </section>
+        <div class="stat">
+            <h2>7</h2>
+            <p>Learning Sections</p>
+        </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 MyWebsite. All Rights Reserved.</p>
-    </footer>
+        <div class="stat">
+            <h2 id="quizScore">0</h2>
+            <p>Quiz Points Earned</p>
+        </div>
+
+        <div class="stat">
+            <h2 id="homeworkCount">0</h2>
+            <p>Homework Entries Saved</p>
+        </div>
+    </div>
+</section>
+
+<!-- STUDY MATERIAL -->
+
+<section class="section" id="study">
+    <div class="section-heading">
+        <h2>📚 Study Material</h2>
+        <p>Explore subjects and improve your knowledge.</p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <div class="card-icon">📐</div>
+            <h3>Mathematics</h3>
+            <p>Learn numbers, algebra, geometry and problem solving.</p>
+            <a class="link-btn" href="https://ncert.nic.in/textbook.php" target="_blank" rel="noopener">Explore Books →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🔬</div>
+            <h3>Science</h3>
+            <p>Explore physics, chemistry, biology and experiments.</p>
+            <a class="link-btn" href="https://ncert.nic.in/textbook.php" target="_blank" rel="noopener">Explore Books →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🌍</div>
+            <h3>Social Science</h3>
+            <p>Learn history, geography and civics.</p>
+            <a class="link-btn" href="https://ncert.nic.in/textbook.php" target="_blank" rel="noopener">Explore Books →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📖</div>
+            <h3>English & Hindi</h3>
+            <p>Improve grammar, vocabulary, reading and writing.</p>
+            <a class="link-btn" href="https://ncert.nic.in/textbook.php" target="_blank" rel="noopener">Explore Books →</a>
+        </div>
+    </div>
+
+    <div style="margin-top:30px;text-align:center">
+        <h3>Free Learning Resources</h3>
+        <br>
+        <a class="btn" style="background:#155eef;color:white" href="https://diksha.gov.in/" target="_blank" rel="noopener">DIKSHA Portal</a>
+        <a class="btn" style="background:#155eef;color:white" href="https://ncert.nic.in/" target="_blank" rel="noopener">NCERT Website</a>
+    </div>
+</section>
+
+<!-- AI LEARNING -->
+
+<section class="section dashboard" id="ai">
+    <div class="section-heading">
+        <h2>🤖 AI & Computer Learning</h2>
+        <p>Develop technology skills for the future.</p>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <div class="card-icon">🐍</div>
+            <h3>Python Programming</h3>
+            <p>Start coding with variables, loops, conditions and functions.</p>
+            <a class="link-btn" href="https://www.python.org/about/gettingstarted/" target="_blank" rel="noopener">Start Python →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🧠</div>
+            <h3>Artificial Intelligence</h3>
+            <p>Understand AI, machine learning and intelligent systems.</p>
+            <a class="link-btn" href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener">Explore AI →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">💻</div>
+            <h3>Computer Basics</h3>
+            <p>Learn hardware, software, internet and computer applications.</p>
+            <a class="link-btn" href="https://www.khanacademy.org/computing" target="_blank" rel="noopener">Start Learning →</a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🎨</div>
+            <h3>Creative Coding</h3>
+            <p>Build creative projects and learn programming concepts.</p>
+            <a class="link-btn" href="https://scratch.mit.edu/" target="_blank" rel="noopener">Explore Scratch →</a>
+        </div>
+    </div>
+</section>
+
+<!-- QUIZ -->
+
+<section class="section" id="quiz">
+    <div class="section-heading">
+        <h2>📝 Online Knowledge Quiz</h2>
+        <p>Test your knowledge and earn points!</p>
+    </div>
+
+    <div class="quiz-box">
+        <div style="display:flex;justify-content:space-between;gap:10px">
+            <h3>General Knowledge Quiz</h3>
+            <span id="questionNumber">Question 1/5</span>
+        </div>
+
+        <br>
+        <h3 id="questionText">Loading question...</h3>
+
+        <div id="options"></div>
+
+        <p id="quizFeedback" aria-live="polite"></p>
+
+        <button class="primary-btn" id="nextBtn" onclick="nextQuestion()" disabled>
+            Next Question →
+        </button>
+
+        <div id="quizResult" style="margin-top:20px"></div>
+    </div>
+</section>
+
+<!-- NOTICES -->
+
+<section class="section dashboard" id="notices">
+    <div class="section-heading">
+        <h2>📢 School Notice Board</h2>
+        <p>Important information and school announcements.</p>
+    </div>
+
+    <div style="max-width:750px;margin:auto">
+        <div class="notice">
+            <small>IMPORTANT INFORMATION</small>
+            <h3>Welcome to the Student Portal</h3>
+            <p>Students can explore study resources and practice online quizzes.</p>
+        </div>
+
+        <div class="notice">
+            <small>LEARNING UPDATE</small>
+            <h3>Explore AI & Computer Learning</h3>
+            <p>Students can start learning Python, AI and computer fundamentals.</p>
+        </div>
+
+        <div class="notice">
+            <small>SCHOOL ANNOUNCEMENTS</small>
+            <h3>Stay Connected</h3>
+            <p>Check with your teachers for verified examination schedules and holidays.</p>
+        </div>
+    </div>
+    <p style="text-align:center;color:#64748b;font-size:12px;margin-top:15px">
+        Demo notices only. Official announcements must be verified by school administration.
+    </p>
+</section>
+
+<!-- HOMEWORK -->
+
+<section class="section" id="homework">
+    <div class="section-heading">
+        <h2>📒 Online Homework</h2>
+        <p>Record your homework details here.</p>
+    </div>
+
+    <form class="homework-form" id="homeworkForm">
+        <div class="form-group">
+            <label>Student Name</label>
+            <input type="text" id="studentName" value="Roshan" required>
+        </div>
+
+        <div class="form-group">
+            <label>Class</label>
+            <select id="studentClass">
+                <option>Class 7th</option>
+                <option>Class 6th</option>
+                <option>Class 8th</option>
+                <option>Class 9th</option>
+                <option>Class 10th</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Select Subject</label>
+            <select id="subject">
+                <option>Mathematics</option>
+                <option>Science</option>
+                <option>English</option>
+                <option>Hindi</option>
+                <option>Social Science</option>
+                <option>Computer</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Homework Details</label>
+            <textarea id="homeworkDetails" rows="4" placeholder="Write your homework details..." required></textarea>
+        </div>
+
+        <button class="primary-btn" type="submit">Save Homework</button>
+
+        <p id="homeworkMessage" aria-live="polite" style="margin-top:15px"></p>
+    </form>
+</section>
+
+<!-- GALLERY -->
+
+<section class="section dashboard" id="gallery">
+    <div class="section-heading">
+        <h2>📸 School Gallery</h2>
+        <p>Memories, activities and learning moments.</p>
+    </div>
+
+    <div class="grid">
+        <div class="card gallery-card">
+            <div class="gallery-item">🏫</div>
+            <p>School Campus</p>
+        </div>
+
+        <div class="card gallery-card">
+            <div class="gallery-item">💻</div>
+            <p>Computer Learning</p>
+        </div>
+
+        <div class="card gallery-card">
+            <div class="gallery-item">🔬</div>
+            <p>Science Activities</p>
+        </div>
+
+        <div class="card gallery-card">
+            <div class="gallery-item">🏆</div>
+            <p>Student Achievements</p>
+        </div>
+    </div>
+    <p style="text-align:center;color:#64748b;font-size:12px;margin-top:20px">
+        Illustrative gallery. Replace these placeholders with actual school photographs after permission.
+    </p>
+</section>
+
+<!-- PRINCIPAL -->
+
+<section class="section principal" id="contact">
+    <div class="section-heading">
+        <h2>School Administration</h2>
+        <p>Meet our school leadership.</p>
+    </div>
+
+    <div class="principal-box">
+        <div class="principal-avatar">👩‍🏫</div>
+        <h2>Archana Khare Ma'am</h2>
+        <p>Principal</p>
+        <p><strong>Sandipani School, Chhatwai</strong></p>
+        <p>📍 Chhatwai, Shahdol, Madhya Pradesh</p>
+        <p>📞 9315632708</p>
+        <a class="btn" style="background:#155eef;color:white"
+           href="tel:9315632708">Call Principal</a>
+    </div>
+    <p style="text-align:center;font-size:12px;color:#64748b;margin-top:18px">
+        Please publish the principal's phone number only with official permission.
+    </p>
+</section>
+
+<footer>
+    <h2>🎓 Sandipani School</h2>
+    <p>Chhatwai, Shahdol, Madhya Pradesh</p>
+    <p>Learning Today, Leading Tomorrow.</p>
+    <p>Student Portal | Designed by Roshan, Class 7th</p>
+    <p>© <span id="year"></span> Sandipani School. All Rights Reserved.</p>
+</footer>
+
+<script>
+
+// Mobile navigation
+function toggleMenu() {
+    document.getElementById("navigation").classList.toggle("active");
+}
+
+document.querySelectorAll("#navigation a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navigation").classList.remove("active");
+    });
+});
+
+// Quiz questions
+const questions = [
+    {
+        question: "What is the capital of India?",
+        options: ["Mumbai", "New Delhi", "Kolkata", "Chennai"],
+        answer: 1
+    },
+    {
+        question: "What is 12 × 8?",
+        options: ["84", "92", "96", "108"],
+        answer: 2
+    },
+    {
+        question: "Which planet is known as the Red Planet?",
+        options: ["Earth", "Mars", "Venus", "Jupiter"],
+        answer: 1
+    },
+    {
+        question: "Which language is commonly used for AI programming?",
+        options: ["Python", "HTML", "CSS", "XML"],
+        answer: 0
+    },
+    {
+        question: "How many days are there in a leap year?",
+        options: ["365", "364", "366", "360"],
+        answer: 2
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+function loadQuestion() {
+    answered = false;
+
+    const q = questions[currentQuestion];
+
+    document.getElementById("questionNumber").textContent =
+        `Question ${currentQuestion + 1}/${questions.length}`;
+
+    document.getElementById("questionText").textContent = q.question;
+
+    document.getElementById("quizFeedback").textContent = "";
+    document.getElementById("nextBtn").disabled = true;
+    document.getElementById("nextBtn").textContent =
+        currentQuestion === questions.length - 1 ? "See Result" : "Next Question →";
+
+    const options = document.getElementById("options");
+    options.innerHTML = "";
+
+    q.options.forEach((option, index) => {
+        const btn = document.createElement("button");
+        btn.className = "quiz-option";
+        btn.textContent = option;
+
+        btn.onclick = () => checkAnswer(index, btn);
+
+        options.appendChild(btn);
+    });
+}
+
+function checkAnswer(index, selectedButton) {
+    if (answered) return;
+
+    answered = true;
+
+    const correct = questions[currentQuestion].answer;
+    const allButtons = document.querySelectorAll(".quiz-option");
+
+    allButtons.forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === correct) btn.classList.add("correct");
+    });
+
+    if (index === correct) {
+        score++;
+        document.getElementById("quizFeedback").textContent =
+            "🎉 Excellent! Your answer is correct!";
+        document.getElementById("quizFeedback").style.color = "#15803d";
+    } else {
+        selectedButton.classList.add("wrong");
+        document.getElementById("quizFeedback").textContent =
+            "Good try! The correct answer is " +
+            questions[currentQuestion].options[correct];
+        document.getElementById("quizFeedback").style.color = "#dc2626";
+    }
+
+    document.getElementById("nextBtn").disabled = false;
+}
+
+function nextQuestion() {
+    if (!answered) return;
+
+    currentQuestion++;
+
+    if (currentQuestion < questions.length) {
+        loadQuestion();
+    } else {
+        document.getElementById("questionText").textContent = "Quiz Completed!";
+        document.getElementById("questionNumber").textContent = "Finished";
+        document.getElementById("options").innerHTML = "";
+
+        document.getElementById("quizFeedback").textContent =
+            `You scored ${score} out of ${questions.length}!`;
+
+        document.getElementById("quizResult").innerHTML =
+            `<h3>🏆 ${score >= 4 ? "Excellent Work!" : "Keep Practicing!"}</h3>
+             <p>Your score: ${score}/${questions.length}</p>
+             <button class="primary-btn" onclick="restartQuiz()">Try Again</button>`;
+
+        document.getElementById("nextBtn").style.display = "none";
+
+        document.getElementById("quizScore").textContent =
+            Number(localStorage.getItem("quizPoints") || 0) + score;
+
+        localStorage.setItem(
+            "quizPoints",
+            Number(localStorage.getItem("quizPoints") || 0) + score
+        );
+    }
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    score = 0;
+
+    document.getElementById("nextBtn").style.display = "inline-block";
+    document.getElementById("quizResult").innerHTML = "";
+
+    loadQuestion();
+}
+
+// Homework: saves entries only in this browser
+function updateHomeworkCount() {
+    const saved = JSON.parse(localStorage.getItem("homeworkEntries") || "[]");
+    document.getElementById("homeworkCount").textContent = saved.length;
+}
+
+document.getElementById("homeworkForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const entry = {
+        name: document.getElementById("studentName").value.trim(),
+        className: document.getElementById("studentClass").value,
+        subject: document.getElementById("subject").value,
+        details: document.getElementById("homeworkDetails").value.trim(),
+        date: new Date().toLocaleDateString()
+    };
+
+    const saved = JSON.parse(localStorage.getItem("homeworkEntries") || "[]");
+    saved.push(entry);
+
+    localStorage.setItem("homeworkEntries", JSON.stringify(saved));
+
+    document.getElementById("homeworkMessage").textContent =
+        "✅ Homework saved successfully on this device!";
+
+    document.getElementById("homeworkForm").reset();
+    document.getElementById("studentName").value = "Roshan";
+
+    updateHomeworkCount();
+});
+
+// Initial page setup
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("quizScore").textContent =
+    localStorage.getItem("quizPoints") || 0;
+
+updateHomeworkCount();
+loadQuestion();
+
+</script>
 
 </body>
 </html>
